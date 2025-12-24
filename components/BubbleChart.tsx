@@ -41,30 +41,29 @@ const CustomTooltip = ({ active, payload }: any) => {
 };
 
 const renderCustomLabel = (props: any) => {
-  const { x, y, width, height, value } = props;
+  const { x, y, value } = props;
+  if (!value) return null;
   return (
     <text 
       x={x} 
-      y={y - 10} 
+      y={y - 12} 
       fill="#475569" 
-      fontSize={9} 
+      fontSize={10} 
       fontWeight={600}
       textAnchor="middle"
-      className="pointer-events-none select-none drop-shadow-sm"
+      className="pointer-events-none select-none"
     >
-      {value}
+      {String(value)}
     </text>
   );
 };
 
 const BubbleChart: React.FC<BubbleChartProps> = ({ data }) => {
-  // Using 50% as the strategic median for the quadrant divider
   const avgMargin = 50; 
   const medianX = Math.floor(CREDIT_ORDER.length / 2);
 
   return (
     <div className="w-full h-[700px] bg-white p-6 rounded-2xl shadow-sm border border-slate-200 relative overflow-hidden">
-      {/* Quadrant Background Colors */}
       <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 opacity-[0.02] pointer-events-none">
         <div className="bg-emerald-500 border-r border-b border-slate-200"></div>
         <div className="bg-slate-500 border-b border-slate-200"></div>
@@ -103,9 +102,8 @@ const BubbleChart: React.FC<BubbleChartProps> = ({ data }) => {
             range={[400, 5000]} 
             name="Revenue" 
           />
-          <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
+          <Tooltip content={CustomTooltip} cursor={{ strokeDasharray: '3 3' }} />
           
-          {/* Main Quadrant Dividers */}
           <ReferenceLine x={medianX} stroke="#e2e8f0" strokeWidth={2} strokeDasharray="5 5" />
           <ReferenceLine y={avgMargin} stroke="#e2e8f0" strokeWidth={2} strokeDasharray="5 5" />
 
