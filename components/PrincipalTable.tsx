@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { RawPrincipalData, BARRIER_COLORS, BARRIER_LABELS } from '../types';
+import { RawPrincipalData, BARRIER_COLORS, BARRIER_LABELS } from '../types.ts';
 
 interface PrincipalTableProps {
   data: RawPrincipalData[];

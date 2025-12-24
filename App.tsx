@@ -1,10 +1,10 @@
 
 import React, { useState, useMemo } from 'react';
-import { RAW_CSV_DATA } from './constants';
-import { parseCSVData, processPrincipalData } from './utils/dataParser';
-import BubbleChart from './components/BubbleChart';
-import PrincipalTable from './components/PrincipalTable';
-import { BARRIER_COLORS, BARRIER_LABELS, BarrierType } from './types';
+import { RAW_CSV_DATA } from './constants.tsx';
+import { parseCSVData, processPrincipalData } from './utils/dataParser.ts';
+import BubbleChart from './components/BubbleChart.tsx';
+import PrincipalTable from './components/PrincipalTable.tsx';
+import { BARRIER_COLORS, BARRIER_LABELS, BarrierType } from './types.ts';
 import { 
   TrendingUp, 
   ChevronDown,

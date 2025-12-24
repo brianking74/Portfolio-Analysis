@@ -13,7 +13,7 @@ import {
   Label,
   LabelList
 } from 'recharts';
-import { ProcessedPrincipalData, CREDIT_ORDER, BARRIER_COLORS, BARRIER_LABELS } from '../types';
+import { ProcessedPrincipalData, CREDIT_ORDER, BARRIER_COLORS, BARRIER_LABELS } from '../types.ts';
 
 interface BubbleChartProps {
   data: ProcessedPrincipalData[];
